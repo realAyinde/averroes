@@ -1,0 +1,25 @@
+{
+  "name": "averroes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "source": "src/index.html",
+  "scripts": {
+    "clean": "rm dist/*",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "Ayinde Sodiq",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-vue": "^2.3.1",
+    "autoprefixer": "^10.4.2",
+    "parcel": "^2.3.1",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.22"
+  },
+  "dependencies": {
+    "vue": "^3.2.31"
+  }
+}
