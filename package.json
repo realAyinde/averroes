@@ -20,6 +20,7 @@
     "tailwindcss": "^3.0.22"
   },
   "dependencies": {
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "vuex": "^4.0.2"
   }
 }
