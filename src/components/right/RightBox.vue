@@ -14,7 +14,7 @@
     >
       <div class="absolute top-0 p-1 left-0 right-0">
         <div class="border-b border-gray-700">
-          <h2 class="text-center">Power & Ability</h2>
+          <h2 class="text-center">{{ title_text }}</h2>
         </div>
         <div
           class="h-8 bg-gradient-to-b from-gray-200 dark:from-slate-900"
@@ -22,28 +22,55 @@
       </div>
       <div class="pt-8 w-full h-full">
         <div class="overflow-auto w-full h-full">
-          <section v-html="about" class=""></section>
-          <!-- <section v-html="current.about"></section> -->
+          <transition>
+            <section :key="text" v-html="text"></section>
+          </transition>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapState } from "vuex";
 export default {
-  data: () => ({
-    about: "",
-    ability: "",
-    appearance: "",
-    others: "",
-  }),
-
+  data() {
+    return {
+      tabs: {
+        about: "About the Character",
+        ability: "Ability and Power",
+        appearance: "Appearance in TV Shows and Movies",
+        others: "Other details",
+      },
+    };
+  },
   computed: {
-    ...mapState(["current"]),
-    about() {
-      return this.current.about;
+    ...mapState(["current", "currentTab"]),
+    text() {
+      return this.current[this.currentTab];
+    },
+
+    title_text() {
+      try {
+        return this.tabs[this.currentTab];
+      } catch (error) {
+        return "---I'm sorry! I forgot this heading---";
+      }
     },
   },
 };
 </script>
+<style>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-enter-from {
+  transition-delay: 0.5s;
+}
+</style>

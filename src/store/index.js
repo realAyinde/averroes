@@ -5,6 +5,7 @@ import { createStore } from "vuex";
 const state = () => ({
   all: [],
   current: {},
+  currentTab: ""
 });
 
 // getters
@@ -50,17 +51,20 @@ const mutations = {
   setCharacters(state, characters) {
     state.all = characters;
     state.current = characters[0];
+    state.currentTab = "about"
   },
 
   setCharacter(state, id = 0) {
-    // console.log(state.current["id"]);
     state.current = state.all[id];
-    // console.log(state.all[0]);
   },
+
+  displayTabContent(state, tab = "about"){
+    state.currentTab = tab
+  }
 };
 
 export default createStore({
-  // namespaced: true,
+  namespaced: true,
   state,
   getters,
   actions,

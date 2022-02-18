@@ -9,9 +9,12 @@
           ><i class="icon-undo2 text-lg"></i
         ></a>
       </div>
-      <h1 class="text-2xl font-bold text-center">
-        <span>{{ id }} | </span><span class="underline">{{ name }}</span>
-      </h1>
+      <transition>
+        <h1 class="text-2xl font-bold text-center">
+          <span>{{ id }} | </span
+          ><span :key="id" class="underline">{{ name }}</span>
+        </h1>
+      </transition>
       <div class="">
         <a
           role="button"
