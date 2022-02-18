@@ -20,5 +20,13 @@
         ><i class="icon-droplet"></i
       ></a>
     </div>
+    <!-- TODO: Implementing something like this for the app -->
+       <!-- <input type="radio"
+      :id="branch"
+      :value="branch"
+      name="branch"
+      v-model="currentBranch">
+      <label :for="branch">{{ branch }}</label> -->
+    <!-- END -->
   </div>
 </template>

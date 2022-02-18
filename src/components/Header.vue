@@ -10,6 +10,7 @@
         ><a href="" class=""><i class="icon-eye text-lg"></i></a
       ></span>
       <div class="md:flex gap-4 hidden px-4 items-center">
+        <a href="" class=""><i class="icon-search text-lg"></i></a>
         <a href="" class=""><i class="icon-sun-fill text-xl"></i></a>
         <div class="relative">
           <label class="toggle-label relative w-14 h-6">
