@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-import { mapActions, mapMutations, mapState } from "vuex";
+import { mapMutations } from "vuex";
 export default {
   methods: {
     ...mapMutations(["displayTabContent"]),

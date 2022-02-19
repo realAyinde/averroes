@@ -53,7 +53,7 @@ export default {
       try {
         return this.tabs[this.currentTab];
       } catch (error) {
-        return "---I'm sorry! I forgot this heading---";
+        return "---I'm sorry! I left this--";
       }
     },
   },
