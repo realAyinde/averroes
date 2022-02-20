@@ -10,8 +10,12 @@
         ><a href="" class=""><i class="icon-eye text-lg"></i></a
       ></span>
       <div class="md:flex gap-4 hidden px-4 items-center">
-        <a href="" class=""><i class="icon-search text-lg"></i></a>
-        <a href="" class=""><i class="icon-sun-fill text-xl dark:text-white"></i></a>
+        <a role="button" class="" @click="setShowSearch"
+          ><i class="icon-search text-lg"></i
+        ></a>
+        <a href="" class=""
+          ><i class="icon-sun-fill text-xl dark:text-white"></i
+        ></a>
         <div class="relative">
           <label class="toggle-label relative w-14 h-6">
             <input type="checkbox" />
@@ -24,8 +28,25 @@
         </div>
       </div>
       <span class="flex-1 md:hidden text-right">
-        <a href="" class=""><i class="icon-menu text-lg"></i></a>
+        <a role="button" @click="setShowMenu" class=""><i class="icon-menu text-lg"></i></a>
       </span>
     </header>
   </div>
 </template>
+
+<script>
+import { mapMutations } from "vuex";
+import Search from "./Search.vue";
+export default {
+  data() {
+    return {};
+  },
+
+  methods: {
+    ...mapMutations(["setShowSearch", "setShowMenu"]),
+  },
+  components: {
+    Search,
+  },
+};
+</script>

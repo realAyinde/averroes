@@ -2,12 +2,14 @@
   <div class="h-full">
     <div class="relative flex justify-center items-center w-full h-full pb-12">
       <div class="absolute left-4 top-4 right-4 bottom-12 flex justify-center items-center">
-        <div class="w-auto max-w-full h-full overflow-clip">
-        <img
-          class="object-cover w-auto max-h-full"
-          :src="img"
-          :alt="img_alt"
-        />
+        <div class="w-auto max-w-full h-full flex justify-center items-center">
+          <transition>
+            <img
+              class="object-cover w-auto max-h-full"
+              :src="img"
+              :alt="img_alt"
+            />
+          </transition>
         </div>
       </div>
     </div>

@@ -10,8 +10,8 @@
       </div>
     </div>
     <Bottom class="md:hidden" />
-    <!-- <mobile-menu class="md:hidden"></mobile-menu> -->
-    <!-- <search></search> -->
+    <mobile-menu :show="showMenu" class="md:hidden"></mobile-menu>
+    <search :show="showSearch"></search>
   </div>
 </template>
 <script>
@@ -20,7 +20,11 @@ import Left from "./Left.vue";
 import Bottom from "./Bottom.vue";
 import MobileMenu from "./MobileMenu.vue";
 import Search from './Search.vue';
+import { mapState } from 'vuex';
 export default {
   components: { Right, Left, Bottom, MobileMenu, Search },
+  computed: {
+    ...mapState(["showSearch", "showMenu"])
+  }
 };
 </script>

@@ -1,10 +1,23 @@
 <template>
-  <div>
-    <div class="fixed top-0 bottom-0 left-0 right-0 z-40 backdrop-blur-2xl">
-      <div class="h-full w-full">
+  <transition name="modal">
+    <div v-if="show" class="transition-opacity duration-300 fixed top-0 bottom-0 left-0 right-0 z-50 backdrop-blur-2xl">
+      <div class="h-full w-full bg-gray-200/50">
         <div class="h-full w-full px-4 sm:px-12 pt-8 md:pt-24 md:pb-24">
-          <div class="rounded-lg w-full max-h-full max-w-3xl mx-auto bg-white flex flex-col">
-            <header class="flex-none w-full flex p-4 gap-4 justify-center border-b">
+          <div
+            class="
+            modal-container
+            transition-all duration-300
+              rounded-lg
+              w-full
+              max-h-full max-w-3xl
+              mx-auto
+              bg-white
+              flex flex-col
+            "
+          >
+            <header
+              class="flex-none w-full flex p-4 gap-4 justify-center border-b"
+            >
               <div class="flex-1">
                 <span class="p-1">
                   <i class="icon-search1 align-middle"></i>
@@ -20,7 +33,7 @@
                 />
               </div>
               <div class="flex-1">
-                <a role="button" class="text-xs">
+                <a role="button" class="text-xs" @click="setShowSearch(false)">
                   <i class="icon-cross"></i>
                 </a>
               </div>
@@ -44,9 +57,9 @@
                     <p class="flex-auto">Kakanfo</p>
                     <span>
                       <i class="icon-eye text-sm"></i>
-                    </span> </a
-                  >
-                   <a
+                    </span>
+                  </a>
+                  <a
                     role="button"
                     class="hover:bg-gray-100 p-2 rounded-md flex"
                   >
@@ -62,8 +75,8 @@
                     <p class="flex-auto">Kakanfo</p>
                     <span>
                       <i class="icon-eye text-sm"></i>
-                    </span> </a
-                  >
+                    </span>
+                  </a>
                   <a
                     role="button"
                     class="hover:bg-gray-100 p-2 rounded-md flex"
@@ -145,8 +158,17 @@
         </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 <script>
-export default {};
+import { mapMutations } from 'vuex';
+export default {
+  props: {
+    show: Boolean,
+  },
+
+  methods: {
+    ...mapMutations(["setShowSearch"])
+  }
+};
 </script>

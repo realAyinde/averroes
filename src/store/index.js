@@ -5,7 +5,9 @@ import { createStore } from "vuex";
 const state = () => ({
   all: [],
   current: {},
-  currentTab: ""
+  currentTab: "",
+  showSearch: false,
+  showMenu: false,
 });
 
 // getters
@@ -60,6 +62,14 @@ const mutations = {
 
   displayTabContent(state, tab = "about"){
     state.currentTab = tab
+  },
+
+  setShowSearch(state, arg = true) {
+    state.showSearch = arg
+  },
+
+  setShowMenu(state, arg = true) {
+    state.showMenu = arg
   }
 };
 
