@@ -20,12 +20,12 @@
 /* Icomoon */
 
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?oiawea');
-  src:  url('fonts/icomoon.eot?oiawea#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?oiawea') format('truetype'),
-    url('fonts/icomoon.woff?oiawea') format('woff'),
-    url('fonts/icomoon.svg?oiawea#icomoon') format('svg');
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot?oiawea");
+  src: url("fonts/icomoon.eot?oiawea#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?oiawea") format("truetype"),
+    url("fonts/icomoon.woff?oiawea") format("woff"),
+    url("fonts/icomoon.svg?oiawea#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -33,7 +33,7 @@
 
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: "icomoon" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -137,7 +137,6 @@ body {
 
 /* End Icomoon */
 
-
 /* width */
 ::-webkit-scrollbar {
   width: 4px;
@@ -224,7 +223,6 @@ body {
   background-image: linear-gradient(#21323a 0%, #324853 100%);
 }
 
-
 /* animate-underline */
 .animate-underline {
   position: relative;
@@ -248,17 +246,26 @@ body {
   width: 100%;
 }
 
-.character_img {
-  width: auto;
-  max-height: 100%;
+/* Animate bounce rightbox header tweaks */
+.animate-bounce:first-child {
+  animation-delay: 0;
+}
+
+.animate-bounce:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.animate-bounce:nth-child(3) {
+  animation-delay: 250ms;
+}
+
+.animate-bounce:nth-child(4) {
+  animation-delay: 300ms;
 }
 
 /* Vue Components TRANSITIONS */
 /* Modal transition */
-.modal-enter-from {
-  opacity: 0;
-}
-
+.modal-enter-from,
 .modal-leave-to {
   opacity: 0;
 }
@@ -267,4 +274,52 @@ body {
 .modal-leave-to .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+/* Fade transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Slide-fade transition */
+.backward-slide-fade-enter-active,
+.backward-slide-fade-leave-active,
+.forward-slide-fade-enter-active,
+.forward-slide-fade-leave-active {
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.backward-slide-fade-enter-from,
+.backward-slide-fade-leave-to,
+.forward-slide-fade-enter-from,
+.forward-slide-fade-leave-to {
+  opacity: 0;
+}
+
+.backward-slide-fade-leave-to,
+.forward-slide-fade-enter-from {
+  transform: translateX(200px);
+}
+
+.backward-slide-fade-enter-from,
+.forward-slide-fade-leave-to {
+  transform: translateX(-200px);
+}
+
+/* Flip */
+.flip-enter-active,
+.flip-leave-active {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.flip-enter-from,
+.flip-leave-to {
+  transform: rotateY(90deg);
 }

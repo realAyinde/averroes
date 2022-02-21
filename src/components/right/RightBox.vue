@@ -22,7 +22,7 @@
       </div>
       <div class="pt-8 w-full h-full">
         <div class="overflow-auto w-full h-full">
-          <transition>
+          <transition name="fade" mode="out-in">
             <section :key="text" v-html="text"></section>
           </transition>
         </div>
@@ -59,18 +59,3 @@ export default {
   },
 };
 </script>
-<style>
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
-
-.v-enter-from {
-  transition-delay: 0.5s;
-}
-</style>

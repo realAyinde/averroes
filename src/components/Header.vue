@@ -7,7 +7,8 @@
         <h1 class="text-xl">Ave<span class="underline">rr</span>oes</h1>
       </div>
       <span class="flex-1 md:hidden text-center"
-        ><a href="" class=""><i class="icon-eye text-lg"></i></a
+        ><a role="button" @click="setFlip(!flip)" class=""
+          ><i class="icon-eye text-lg"></i></a
       ></span>
       <div class="md:flex gap-4 hidden px-4 items-center">
         <a role="button" class="" @click="setShowSearch"
@@ -28,25 +29,32 @@
         </div>
       </div>
       <span class="flex-1 md:hidden text-right">
-        <a role="button" @click="setShowMenu" class=""><i class="icon-menu text-lg"></i></a>
+        <a role="button" @click="setShowMenu" class=""
+          ><i class="icon-menu text-lg"></i
+        ></a>
       </span>
     </header>
   </div>
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations, mapState } from "vuex";
 import Search from "./Search.vue";
 export default {
   data() {
     return {};
   },
 
-  methods: {
-    ...mapMutations(["setShowSearch", "setShowMenu"]),
-  },
   components: {
     Search,
+  },
+
+  methods: {
+    ...mapMutations(["setShowSearch", "setShowMenu", "setFlip"]),
+  },
+
+  computed: {
+    ...mapState(["flip"]),
   },
 };
 </script>

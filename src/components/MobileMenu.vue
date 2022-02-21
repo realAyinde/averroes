@@ -1,14 +1,34 @@
 <template>
   <transition name="modal">
-    <div v-if="show" class="transition-opacity duration-300 fixed top-0 bottom-0 left-0 right-0 z-50 backdrop-blur-2xl">
+    <div
+      v-if="show"
+      class="
+        transition-opacity
+        duration-300
+        fixed
+        top-0
+        bottom-0
+        left-0
+        right-0
+        z-50
+        backdrop-blur-2xl
+      "
+    >
       <div class="h-full w-full bg-gray-200/50">
         <div class="h-full w-full flex items-center justify-center">
-          <div class=" modal-container
-            transition-all duration-300 relative text-center">
+          <div
+            class="
+              modal-container
+              transition-all
+              duration-300
+              relative
+              text-center
+            "
+          >
             <div class="m-4 mb-12">
-                  <a role="button" @click="setShowMenu(false)">
-                      <i class="icon-cross"></i>
-                  </a>
+              <a role="button" @click="setShowMenu(false)">
+                <i class="icon-cross"></i>
+              </a>
             </div>
             <div class="m-4">
               <a>Averroes </a>
@@ -49,7 +69,7 @@
               </div>
             </div>
             <div class="m-4 mt-12 text-xs">
-                <p>Made by Ayinde</p>
+              <p>Made by Ayinde</p>
             </div>
             <div class="m-4"></div>
           </div>
@@ -59,14 +79,14 @@
   </transition>
 </template>
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations } from "vuex";
 export default {
   props: {
     show: Boolean,
   },
 
   methods: {
-    ...mapMutations(["setShowMenu", "setShowSearch"])
-  }
+    ...mapMutations(["setShowMenu", "setShowSearch"]),
+  },
 };
 </script>

@@ -8,6 +8,8 @@ const state = () => ({
   currentTab: "",
   showSearch: false,
   showMenu: false,
+  characterTransitionName: "forward-slide-fade",
+  flip: true
 });
 
 // getters
@@ -37,6 +39,7 @@ const actions = {
     var next_index = context.state.all.indexOf(context.state.current) + 1;
     if (next_index != context.state.all.length){
       context.commit("setCharacter", next_index);
+      context.state.characterTransitionName = "forward-slide-fade"
     }
   },
 
@@ -44,6 +47,7 @@ const actions = {
     var previous_index = context.state.all.indexOf(context.state.current) - 1;
     if (previous_index != -1){
       context.commit("setCharacter", previous_index);
+      context.state.characterTransitionName = "backward-slide-fade"
     }
   },
 };
@@ -70,6 +74,10 @@ const mutations = {
 
   setShowMenu(state, arg = true) {
     state.showMenu = arg
+  },
+
+  setFlip (state, arg = false) {
+    state.flip = arg
   }
 };
 
