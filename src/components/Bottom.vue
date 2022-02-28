@@ -5,7 +5,7 @@
         <a
           role="button"
           @click="previousCharacter()"
-          class="rounded-full p-2 border border-gray-600"
+          class="rounded-full p-2 border border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-600"
           ><i class="icon-undo2 text-lg"></i
         ></a>
       </div>
@@ -19,7 +19,7 @@
         <a
           role="button"
           @click="nextCharacter()"
-          class="rounded-full p-2 border border-gray-600 hover:bg-gray-300"
+          class="rounded-full p-2 border border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-600"
           ><i class="icon-redo2 text-lg"></i
         ></a>
       </div>

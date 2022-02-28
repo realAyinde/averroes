@@ -14,7 +14,7 @@
         backdrop-blur-2xl
       "
     >
-      <div class="h-full w-full bg-gray-200/50">
+      <div class="h-full w-full bg-gray-200/50 dark:bg-gray-700/50">
         <div class="h-full w-full px-4 sm:px-12 py-8 sm:py-12 md:py-24">
           <div
             class="
@@ -26,11 +26,12 @@
               max-h-full max-w-3xl
               mx-auto
               bg-white
+              dark:bg-slate-900
               flex flex-col
             "
           >
             <header
-              class="flex-none w-full flex p-4 gap-4 justify-center border-b"
+              class="flex-none w-full flex p-4 gap-4 justify-center border-b dark:border-gray-800"
             >
               <div class="flex-1">
                 <span class="p-1">
@@ -57,7 +58,7 @@
                 <div class="max-h-full">
                   <a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
                   >
                     <p class="flex-auto">Medusa</p>
                     <span>
@@ -66,7 +67,7 @@
                   </a>
                   <a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
                   >
                     <p class="flex-auto">Kakanfo</p>
                     <span>
@@ -75,7 +76,7 @@
                   </a>
                   <a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800  rounded-md flex"
                   >
                     <p class="flex-auto">Medusa</p>
                     <span>
@@ -84,7 +85,7 @@
                   </a>
                   <a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
                   >
                     <p class="flex-auto">Kakanfo</p>
                     <span>
@@ -93,7 +94,7 @@
                   </a>
                   <a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
                   >
                     <p class="flex-auto">Thor</p>
                     <span>
@@ -101,7 +102,7 @@
                     </span> </a
                   ><a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
                   >
                     <p class="flex-auto">Zaria</p>
                     <span>
@@ -110,7 +111,7 @@
                   </a>
                   <a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
                   >
                     <p class="flex-auto">Elemosho</p>
                     <span>
@@ -119,7 +120,7 @@
                   </a>
                   <a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
                   >
                     <p class="flex-auto">Ogunmola</p>
                     <span>
@@ -128,7 +129,7 @@
                   </a>
                   <a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
                   >
                     <p class="flex-auto">Balogun</p>
                     <span>
@@ -137,7 +138,7 @@
                   </a>
                   <a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
                   >
                     <p class="flex-auto">Elemosho</p>
                     <span>
@@ -146,7 +147,7 @@
                   </a>
                   <a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
                   >
                     <p class="flex-auto">Ogunmola</p>
                     <span>
@@ -155,7 +156,7 @@
                   </a>
                   <a
                     role="button"
-                    class="hover:bg-gray-100 p-2 rounded-md flex"
+                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
                   >
                     <p class="flex-auto">Balogun</p>
                     <span>
@@ -165,7 +166,7 @@
                 </div>
               </div>
             </div>
-            <footer class="flex-none w-full px-4 py-2 border-t">
+            <footer class="flex-none w-full px-4 py-2 border-t dark:border-gray-800">
               <p class="text-right text-xs">Made by Ayinde Sodiq</p>
             </footer>
           </div>

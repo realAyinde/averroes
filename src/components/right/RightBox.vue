@@ -9,6 +9,7 @@
         rounded-3xl
         p-3
         bg-gray-200
+        dark:bg-slate-700
         text-lg
       "
     >
@@ -17,7 +18,7 @@
           <h2 class="text-center">{{ title_text }}</h2>
         </div>
         <div
-          class="h-8 bg-gradient-to-b from-gray-200 dark:from-slate-900"
+          class="h-8 bg-gradient-to-b from-gray-200 dark:from-slate-700"
         ></div>
       </div>
       <div class="pt-8 w-full h-full">

@@ -42,7 +42,7 @@
               <p>Theme</p>
               <div class="relative p-1">
                 <label class="toggle-label relative w-14 h-6">
-                  <input type="checkbox" />
+                  <input type="checkbox" v-model="themeChecked" />
                   <span class="base flex justify-between items-center px-2">
                     <span class="toggle-slider z-40 bg-gray-800"></span>
                     <span class="option1 text-slate-600 z-50">
@@ -57,16 +57,7 @@
             </div>
             <div class="m-4">
               <p>Language</p>
-              <div class="relative p-1">
-                <label class="toggle-label relative w-14 h-6">
-                  <input type="checkbox" />
-                  <span class="base flex justify-between items-center px-2">
-                    <span class="toggle-slider z-40 bg-gray-800"></span>
-                    <span class="option1 text-slate-600 z-50"> EN </span>
-                    <span class="option2 text-slate-600 z-50"> YR </span>
-                  </span>
-                </label>
-              </div>
+              <lang-switch class="p-1"></lang-switch>
             </div>
             <div class="m-4 mt-12 text-xs">
               <p>Made by Ayinde</p>
@@ -79,14 +70,43 @@
   </transition>
 </template>
 <script>
-import { mapMutations } from "vuex";
+// import { watch } from '@vue/runtime-core';
+import { mapMutations, mapState } from "vuex";
+import LangSwitch from './switches/LangSwitch.vue';
 export default {
   props: {
     show: Boolean,
   },
 
-  methods: {
-    ...mapMutations(["setShowMenu", "setShowSearch"]),
+  components: {LangSwitch},
+
+  data(){
+    return {
+      themeChecked: Boolean
+    }
   },
+
+  methods: {
+    ...mapMutations(["setShowMenu", "setShowSearch", "switchTheme"]),
+  },
+
+  computed: {
+    ...mapState(["theme"]),
+  },
+
+  mounted(){
+    if(this.theme === "dark"){
+      this.themeChecked = true
+    } else {
+      this.themeChecked = false
+    }
+  },
+
+  watch: {
+    themeChecked(){
+      console.log("Changed");
+      this.switchTheme()
+    }
+  }
 };
 </script>

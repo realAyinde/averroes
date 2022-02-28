@@ -4,7 +4,7 @@
       class="flex w-full justify-between p-4 py-2 border-b border-gray-700"
     >
       <div class="flex-1">
-        <h1 class="text-xl">Ave<span class="underline">rr</span>oes</h1>
+        <h1 class="text-xl">{{ $t('averroes') }}</h1>
       </div>
       <span class="flex-1 md:hidden text-center"
         ><a role="button" @click="setFlip(!flip)" class=""
@@ -14,19 +14,10 @@
         <a role="button" class="" @click="setShowSearch"
           ><i class="icon-search text-lg"></i
         ></a>
-        <a href="" class=""
+        <a role="button" @click="switchTheme()" class=""
           ><i class="icon-sun-fill text-xl dark:text-white"></i
         ></a>
-        <div class="relative">
-          <label class="toggle-label relative w-14 h-6">
-            <input type="checkbox" />
-            <span class="base flex justify-between items-center px-2">
-              <span class="toggle-slider z-40 bg-gray-800"></span>
-              <span class="option1 text-slate-600 z-50"> EN </span>
-              <span class="option2 text-slate-600 z-50"> YR </span>
-            </span>
-          </label>
-        </div>
+        <lang-switch></lang-switch>
       </div>
       <span class="flex-1 md:hidden text-right">
         <a role="button" @click="setShowMenu" class=""
@@ -40,6 +31,7 @@
 <script>
 import { mapMutations, mapState } from "vuex";
 import Search from "./Search.vue";
+import LangSwitch from './switches/LangSwitch.vue';
 export default {
   data() {
     return {};
@@ -47,14 +39,28 @@ export default {
 
   components: {
     Search,
+    LangSwitch,
   },
 
   methods: {
-    ...mapMutations(["setShowSearch", "setShowMenu", "setFlip"]),
+    ...mapMutations(["setShowSearch", "setShowMenu", "setFlip", "switchTheme"]),
   },
 
   computed: {
     ...mapState(["flip"]),
+  },
+
+  mounted() {
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   },
 };
 </script>

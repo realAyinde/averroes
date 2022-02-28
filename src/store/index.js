@@ -1,4 +1,5 @@
 import averroes from "../api/averroes";
+import i18n from '../plugins/i18n';
 import { createStore } from "vuex";
 
 // Initial state
@@ -9,12 +10,12 @@ const state = () => ({
   showSearch: false,
   showMenu: false,
   characterTransitionName: "forward-slide-fade",
-  flip: true
+  flip: true,
+  theme: "",
 });
 
 // getters
-const getters = {
-};
+const getters = {};
 
 // actions
 const actions = {
@@ -37,17 +38,17 @@ const actions = {
 
   nextCharacter(context) {
     var next_index = context.state.all.indexOf(context.state.current) + 1;
-    if (next_index != context.state.all.length){
+    if (next_index != context.state.all.length) {
       context.commit("setCharacter", next_index);
-      context.state.characterTransitionName = "forward-slide-fade"
+      context.state.characterTransitionName = "forward-slide-fade";
     }
   },
 
   previousCharacter(context) {
     var previous_index = context.state.all.indexOf(context.state.current) - 1;
-    if (previous_index != -1){
+    if (previous_index != -1) {
       context.commit("setCharacter", previous_index);
-      context.state.characterTransitionName = "backward-slide-fade"
+      context.state.characterTransitionName = "backward-slide-fade";
     }
   },
 };
@@ -57,27 +58,41 @@ const mutations = {
   setCharacters(state, characters) {
     state.all = characters;
     state.current = characters[0];
-    state.currentTab = "about"
+    state.currentTab = "about";
   },
 
   setCharacter(state, id = 0) {
     state.current = state.all[id];
   },
 
-  displayTabContent(state, tab = "about"){
-    state.currentTab = tab
+  displayTabContent(state, tab = "about") {
+    state.currentTab = tab;
   },
 
   setShowSearch(state, arg = true) {
-    state.showSearch = arg
+    state.showSearch = arg;
   },
 
   setShowMenu(state, arg = true) {
-    state.showMenu = arg
+    state.showMenu = arg;
   },
 
-  setFlip (state, arg = false) {
-    state.flip = arg
+  setFlip(state, arg = false) {
+    state.flip = arg;
+  },
+
+  switchTheme(state) {
+    if (document.documentElement.classList.contains("dark")){
+      document.documentElement.classList.remove("dark");
+      state.theme = ""
+    } else {
+      document.documentElement.classList.add("dark");
+      state.theme = "dark"
+    }
+  },
+
+  switchLanguage(state, locale = 'en') {
+      i18n.locale = locale;
   }
 };
 
