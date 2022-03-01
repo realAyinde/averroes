@@ -1,5 +1,4 @@
 import averroes from "../api/averroes";
-import i18n from '../plugins/i18n';
 import { createStore } from "vuex";
 
 // Initial state
@@ -12,6 +11,7 @@ const state = () => ({
   characterTransitionName: "forward-slide-fade",
   flip: true,
   theme: "",
+  lang: "en"
 });
 
 // getters
@@ -91,9 +91,9 @@ const mutations = {
     }
   },
 
-  switchLanguage(state, locale = 'en') {
-      i18n.locale = locale;
-  }
+  switchLang(state, locale = 'en') {
+    state.lang = locale
+  },
 };
 
 export default createStore({
