@@ -44,8 +44,8 @@
                   type="text"
                   name=""
                   id=""
-                  placeholder="Search Averroes"
-                />
+                  placeholder="{{ $t('search') }} {{ $t('averroes') }}"
+                >
               </div>
               <div class="flex-1">
                 <a role="button" class="text-xs" @click="setShowSearch(false)">
@@ -167,7 +167,7 @@
               </div>
             </div>
             <footer class="flex-none w-full px-4 py-2 border-t dark:border-gray-800">
-              <p class="text-right text-xs">Made by Ayinde Sodiq</p>
+              <p class="text-right text-xs">{{$t('made_by_ayinde_sodiq')}}</p>
             </footer>
           </div>
         </div>

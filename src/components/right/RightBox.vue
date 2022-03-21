@@ -37,14 +37,24 @@ export default {
   data() {
     return {
       tabs: {
-        about: "About the Character",
-        ability: "Ability and Power",
-        appearance: "Appearance in TV Shows and Movies",
-        others: "Other details",
+        about: this.$i18n.t('about_the_character'),
+        ability: this.$i18n.t('ability_and_power'),
+        appearance: this.$i18n.t('appearance_in_tvshows'),
+        others: this.$i18n.t('other_details'),
       },
     };
   },
   computed: {
+    // tabs: {
+    //     about: this.$i18n.t('about_the_character'),
+    //     ability: this.$i18n.t('ability_and_power'),
+    //     appearance: this.$i18n.t('appearance_in_tvshows'),
+    //     others: this.$i18n.t('other_details'),
+    //     // about: "About the Character",
+    //     // ability: "Ability and Power",
+    //     // appearance: "Appearance in TV Shows and Movies",
+    //     // others: "Other details",
+    //   },
     ...mapState(["current", "currentTab"]),
     text() {
       return this.current[this.currentTab];

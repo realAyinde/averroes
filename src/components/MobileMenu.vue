@@ -56,11 +56,11 @@
               </div>
             </div>
             <div class="m-4">
-              <p>Language</p>
+              <p>{{ $t('language') }}</p>
               <lang-switch class="p-1"></lang-switch>
             </div>
             <div class="m-4 mt-12 text-xs">
-              <p>Made by Ayinde</p>
+              <p>{{$t('made_by_ayinde_sodiq')}}</p>
             </div>
             <div class="m-4"></div>
           </div>
