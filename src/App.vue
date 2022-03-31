@@ -32,8 +32,8 @@ export default {
     },
   },
 
-  watch: {
-    characters: "getCharacters",
-  },
+  // watch: {
+  //   characters: "getCharacters",
+  // },
 };
 </script>

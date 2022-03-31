@@ -44,7 +44,7 @@
                   type="text"
                   name=""
                   id=""
-                  placeholder="{{ $t('search') }} {{ $t('averroes') }}"
+                  placeholder="Search for averroes characters"
                 >
               </div>
               <div class="flex-1">

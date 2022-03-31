@@ -104,7 +104,6 @@ export default {
 
   watch: {
     themeChecked(){
-      console.log("Changed");
       this.switchTheme()
     }
   }
