@@ -1,4 +1,5 @@
-import averroes from "../api/averroes";
+// import averroes from "../api/averroes";
+import averroes from "../services/characters";
 import { createStore } from "vuex";
 
 // Initial state

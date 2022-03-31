@@ -21,7 +21,6 @@
     "tailwindcss": "^3.0.22"
   },
   "dependencies": {
-    "firebase": "^9.6.9",
     "vue": "^3.2.31",
     "vue-i18n": "^9.1.9",
     "vuex": "^4.0.2"

@@ -46,21 +46,9 @@ const _averroes = [
 export default {
   async getAllCharacters() {
     await wait(100);
+      console.log(_averroes);
     return _averroes;
   },
-
-  //   async buyProducts(products) {
-  //     await wait(100);
-  //     if (
-  //       // simulate random checkout failure.
-  //       Math.random() > 0.5 ||
-  //       navigator.webdriver
-  //     ) {
-  //       return;
-  //     } else {
-  //       throw new Error("Checkout error");
-  //     }
-  //   },
 };
 
 function wait(ms) {
