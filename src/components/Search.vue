@@ -31,7 +31,16 @@
             "
           >
             <header
-              class="flex-none w-full flex p-4 gap-4 justify-center border-b dark:border-gray-800"
+              class="
+                flex-none
+                w-full
+                flex
+                p-4
+                gap-4
+                justify-center
+                border-b
+                dark:border-gray-800
+              "
             >
               <div class="flex-1">
                 <span class="p-1">
@@ -44,8 +53,9 @@
                   type="text"
                   name=""
                   id=""
+                  v-model="searchText"
                   placeholder="Search for averroes characters"
-                >
+                />
               </div>
               <div class="flex-1">
                 <a role="button" class="text-xs" @click="setShowSearch(false)">
@@ -56,118 +66,47 @@
             <div class="flex-auto px-4 py-2 overflow-auto">
               <div class="max-h-full">
                 <div class="max-h-full">
-                  <a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
-                  >
-                    <p class="flex-auto">Medusa</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span>
-                  </a>
-                  <a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
-                  >
-                    <p class="flex-auto">Kakanfo</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span>
-                  </a>
-                  <a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800  rounded-md flex"
-                  >
-                    <p class="flex-auto">Medusa</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span>
-                  </a>
-                  <a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
-                  >
-                    <p class="flex-auto">Kakanfo</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span>
-                  </a>
-                  <a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
-                  >
-                    <p class="flex-auto">Thor</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span> </a
-                  ><a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
-                  >
-                    <p class="flex-auto">Zaria</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span>
-                  </a>
-                  <a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
-                  >
-                    <p class="flex-auto">Elemosho</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span>
-                  </a>
-                  <a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
-                  >
-                    <p class="flex-auto">Ogunmola</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span>
-                  </a>
-                  <a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
-                  >
-                    <p class="flex-auto">Balogun</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span>
-                  </a>
-                  <a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
-                  >
-                    <p class="flex-auto">Elemosho</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span>
-                  </a>
-                  <a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
-                  >
-                    <p class="flex-auto">Ogunmola</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span>
-                  </a>
-                  <a
-                    role="button"
-                    class="hover:bg-gray-100 p-2 dark:hover:bg-gray-800 rounded-md flex"
-                  >
-                    <p class="flex-auto">Balogun</p>
-                    <span>
-                      <i class="icon-eye text-sm"></i>
-                    </span>
-                  </a>
+                  <section v-if="!filteredCharacters">
+                    <div class="p-8">
+                      <p class="text-center text-slate-400">
+                        Search for your lovely characters
+                      </p>
+                    </div>
+                  </section>
+                  <section v-else-if="!filteredCharacters.length">
+                    <div class="p-8">
+                      <p class="text-center text-slate-400">
+                        No character name with the search input
+                      </p>
+                    </div>
+                  </section>
+                  <section v-else>
+                    <a
+                      role="button"
+                      class="
+                        hover:bg-gray-100
+                        p-2
+                        dark:hover:bg-gray-800
+                        rounded-md
+                        flex
+                      "
+                      v-for="(char, index) in filteredCharacters"
+                      :key="index"
+                      @click="gotoCharacter(char)"
+                    >
+                      <p class="flex-auto">{{ char.name }}</p>
+                      <span>
+                        <i class="icon-eye text-sm"></i>
+                      </span>
+                    </a>
+                  </section>
                 </div>
               </div>
             </div>
-            <footer class="flex-none w-full px-4 py-2 border-t dark:border-gray-800">
-              <p class="text-right text-xs">{{$t('made_by_ayinde_sodiq')}}</p>
+            <footer
+              class="flex-none w-full px-4 py-2 border-t dark:border-gray-800"
+            >
+              <p class="text-right text-xs">{{ $t("made_by_ayinde_sodiq") }}</p>
             </footer>
           </div>
         </div>
@@ -176,14 +115,36 @@
   </transition>
 </template>
 <script>
-import { mapMutations } from "vuex";
+import { mapActions, mapMutations, mapState } from "vuex";
 export default {
   props: {
     show: Boolean,
   },
 
+  data() {
+    return {
+      searchText: "",
+    };
+  },
+
   methods: {
-    ...mapMutations(["setShowSearch"]),
+    ...mapMutations(["setShowSearch", "setCharacter", "setShowMenu"]),
+    ...mapActions(["getFilterChars"]),
+    gotoCharacter(char){
+      this.setCharacter(char)
+      this.setShowSearch(false)
+      this.setShowMenu(false)
+    }
+  },
+
+  computed: {
+    ...mapState(["filteredCharacters"]),
+  },
+
+  watch: {
+    searchText: function () {
+      this.getFilterChars(this.searchText);
+    },
   },
 };
 </script>

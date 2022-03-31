@@ -36,6 +36,21 @@ const actions = {
       await context.dispatch("getCharacter", previous_id);
     }
   },
+
+  getFilterChars(context, searchText) {
+    if (searchText != "") {
+      var newfilterChars = [];
+      context.state.all.forEach((char) => {
+        var name = char.name.toLowerCase();
+        if (name.search(searchText.toLowerCase()) > -1) {
+          newfilterChars.push(char);
+        }
+      });
+      context.state.filteredCharacters = newfilterChars;
+    } else {
+      context.state.filteredCharacters = null;
+    }
+  },
 };
 
 export default actions;

@@ -3,6 +3,7 @@ const state = () => ({
     all: [],
     current: {},
     currentTab: "",
+    filteredCharacters: null,
     showSearch: false,
     showMenu: false,
     characterTransitionName: "forward-slide-fade",
