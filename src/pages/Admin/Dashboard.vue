@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <AdminHeader />
+  <div class="h-full">
     <AdminDashboard />
   </div>
 </template>

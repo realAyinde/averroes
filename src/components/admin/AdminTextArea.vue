@@ -4,37 +4,37 @@
       <div class="bg-gray-200 rounded-lg p-1">
         <ul class="flex gap-1">
           <li>
-            <button class="p-1 px-3 rounded-md hover:bg-gray-500">
+            <button class="p-1 px-3 rounded-md hover:bg-gray-500 border border-gray-500">
               <span class="block">B</span>
             </button>
           </li>
           <li>
-            <button class="p-1 px-3 rounded-md hover:bg-gray-500">
+            <button class="p-1 px-3 rounded-md hover:bg-gray-500 border border-gray-500">
               <span class="block">I</span>
             </button>
           </li>
           <li>
-            <button class="p-1 px-3 rounded-md hover:bg-gray-500">
+            <button class="p-1 px-3 rounded-md hover:bg-gray-500 border border-gray-500">
               <span class="block">#</span>
             </button>
           </li>
           <li>
-            <button class="p-1 px-3 rounded-md hover:bg-gray-500">
+            <button class="p-1 px-3 rounded-md hover:bg-gray-500 border border-gray-500">
               <span class="block">@</span>
             </button>
           </li>
           <li>
-            <button class="p-1 px-3 rounded-md hover:bg-gray-500">
+            <button class="p-1 px-3 rounded-md hover:bg-gray-500 border border-gray-500">
               <span class="block">O</span>
             </button>
           </li>
           <li>
-            <button class="p-1 px-3 rounded-md hover:bg-gray-500">
+            <button class="p-1 px-3 rounded-md hover:bg-gray-500 border border-gray-500">
               <span class="block">"</span>
             </button>
           </li>
           <li>
-            <button class="p-1 px-3 rounded-md hover:bg-gray-500">
+            <button class="p-1 px-3 rounded-md hover:bg-gray-500 border border-gray-500">
               <span class="block">+</span>
             </button>
           </li>

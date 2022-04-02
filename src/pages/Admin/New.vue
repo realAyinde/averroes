@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <AdminHeader />
+  <div class="h-full w-full">
+    <!-- <AdminHeader /> -->
     <AdminSingle />
   </div>
 </template>
